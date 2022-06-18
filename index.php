@@ -21,7 +21,7 @@ if (isset($_POST['login'])) {
             $_SESSION['id'] = $user->id;
             $_SESSION['user'] = $user->user;
             include('filters/guest_filter.php');
-            //redirect('profile.php');
+            
         } else {
             
             set_flash('Invalid username, mail or password', 'danger');
