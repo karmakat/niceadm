@@ -105,3 +105,40 @@ if (!function_exists('set_active')) {
         }
     }
 }
+
+if (!function_exists('get_session')) {
+    function get_session($key)
+    {
+        if ($key) {
+            return !empty($_SESSION[$key])
+                ? e($_SESSION[$key])
+                : null;
+        }
+    }
+}
+
+if (!function_exists('find_user_by_id')) {
+    function find_user_by_id($id)
+    {
+        global $db;
+        
+        $q = $db->prepare("SELECT * FROM t_users WHERE id=?");
+        $q->execute([$id]);
+        $data = $q->fetch(PDO::FETCH_OBJ);
+        $q->closeCursor();
+        return $data;       
+    }
+}
+ if(!function_exists('get_avatar_url')){
+     function get_avatar_url($mail){
+       return "http://gravatar.com/avatar/". md5(strtolower(trim(e($mail))));
+     }
+ }
+
+ if (!function_exists('is_logged_in')) {
+    function is_logged_in()
+    {
+       return isset($_SESSION['id']) || isset($_SESSION['id']); 
+    }
+}
+

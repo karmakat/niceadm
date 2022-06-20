@@ -24,44 +24,11 @@
 
 
             <div class="card">
-              <div class="card-footer">
-                <!-- Bordered Tabs -->
-                <ul class="nav nav-tabs nav-tabs-bordered">
-
-                  <li class="nav-item">
-                    <button type="button" class="nav-link" data-bs-toggle="modal" data-bs-target="#modal0">
-                      <i class="bi bi-person-fill btn"></i>
-                    </button>
-                  </li>
-
-                  <li class="nav-item">
-                    <button type="button" class="nav-link" data-bs-toggle="modal" data-bs-target="#modal1">
-                      <i class="bi bi-pencil-square btn"></i>
-                    </button>
-                  </li>
-
-                  <li class="nav-item">
-                    <button type="button" class="nav-link" data-bs-toggle="modal" data-bs-target="#modal2">
-                      <i class="bi bi-gear btn"></i>
-                    </button>
-                  </li>
-
-
-                  <li class="nav-item">
-                    <button type="button" class="nav-link" data-bs-toggle="modal" data-bs-target="#modal3">
-                      <i class="bi bi-lock-fill btn"></i>
-                    </button>
-                  </li>
-
-                  
-
-                </ul>
-              </div>
               <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
-
-                <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-                <h2><?= SHARP . $user ?></h2>
+                <img src="<?= get_avatar_url($user_info->mail) ?>" alt="Profile" class="rounded-circle">
+                <h2><?= SHARP . e($user_info->user) ?></h2>
                 <h3>Web Designer</h3>
+                <h6><a href="mailto:<?= e($user_info->mail)?>" class="text-dark"><?= e($user_info->mail)?></a></h6>
                 <div class="social-links mt-2">
                   <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
                   <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
@@ -73,7 +40,6 @@
 
             </div>
           </div>
-
           <div class="pagetitle">
             <h1>Posts</h1>
           </div><!-- End Page Title -->
@@ -116,12 +82,8 @@
           <div class="pagetitle">
             <h1>About</h1>
           </div>
-          <!-- End Page Title 
-          <div class="card ">
-            <div class="card-body pt-3">
-
-            </div>
--->
+        
+          <?php include('includes/profiles_infos.php')?>
         </div>
       </div>
       </div>
@@ -131,14 +93,6 @@
   </main><!-- End #main -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <?php
-    include('includes/u_about.php');
-    include('includes/u_edit.php');
-    include('includes/u_seetings.php');
-    include('includes/u_change_pass.php');
-  ?>
-
 
 </body>
 
