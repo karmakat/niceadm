@@ -4,11 +4,11 @@
         <ul class="nav nav-tabs nav-tabs-bordered">
 
             <li class="nav-item">
-                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Overview</button>
+                <button class="nav-link " data-bs-toggle="tab" data-bs-target="#profile-overview">Overview</button>
             </li>
 
             <li class="nav-item">
-                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profile</button>
+                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profile</button>
             </li>
 
             <li class="nav-item">
@@ -22,7 +22,7 @@
         </ul>
         <div class="tab-content pt-2">
 
-            <div class="tab-pane fade show active profile-overview" id="profile-overview">
+            <div class="tab-pane fade profile-overview" id="profile-overview">
                 <h5 class="card-title">About</h5>
                 <p class="small fst-italic">Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</p>
 
@@ -65,10 +65,11 @@
 
             </div>
 
-            <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
+            <div class="tab-pane fade show active profile-edit pt-3" id="profile-edit">
 
                 <!-- Profile Edit Form -->
-                <form data-parsley-validate method="POST" autocomplete="off">
+                <form method="POST" autocomplete="off">
+                    <?php include('partials/_errors.php')?>
                     <div class="row mb-3">
                         <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
                         <div class="col-md-8 col-lg-9">
@@ -81,63 +82,55 @@
                     </div>
 
                     <div class="row mb-3">
-                        <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Full Name</label>
+                        <label for="about" class="col-md-4 col-lg-3 col-form-label">About</label>
                         <div class="col-md-8 col-lg-9">
-                            <input name="fullName" type="text" class="form-control" id="fullName" value="Kevin Anderson" required="required">
+                            <textarea name="txtabout" class="form-control" id="about" style="height: 100px"  required="required"><?= $user_info->bio?></textarea>
                         </div>
                     </div>
 
                     <div class="row mb-3">
-                        <label for="about" class="col-md-4 col-lg-3 col-form-label">About</label>
+                        <label for="company" class="col-md-4 col-lg-3 col-form-label">Names</label>
                         <div class="col-md-8 col-lg-9">
-                            <textarea name="about" class="form-control" id="about" style="height: 100px" required="required">Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</textarea>
+                            <input name="txtnames" type="text" class="form-control" id="company" value="<?= $user_info->names?>" required="required">
+                        </div>
+                    </div>
+
+
+                    <div class="row mb-3">
+                        <label for="company" class="col-md-4 col-lg-3 col-form-label">Username</label>
+                        <div class="col-md-8 col-lg-9">
+                            <input name="txtuser" type="text" class="form-control" id="company" value="<?= $user_info->user ?>" required="required">
                         </div>
                     </div>
 
                     <div class="row mb-3">
                         <label for="company" class="col-md-4 col-lg-3 col-form-label">Company</label>
                         <div class="col-md-8 col-lg-9">
-                            <input name="company" type="text" class="form-control" id="company" value="Lueilwitz, Wisoky and Leuschke" required="required">
+                            <input name="txtcompany" type="text" class="form-control" id="company" value="<?= $user_info->company?>" required="required">
                         </div>
                     </div>
 
                     <div class="row mb-3">
                         <label for="Job" class="col-md-4 col-lg-3 col-form-label">Job</label>
                         <div class="col-md-8 col-lg-9">
-                            <input name="job" type="text" class="form-control" id="Job" value="Web Designer" required="required">
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <label for="Country" class="col-md-4 col-lg-3 col-form-label">Country</label>
-                        <div class="col-md-8 col-lg-9">
-                            <input name="country" type="text" class="form-control" id="Country" value="USA" required="required">
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <label for="Address" class="col-md-4 col-lg-3 col-form-label">Address</label>
-                        <div class="col-md-8 col-lg-9">
-                            <input name="address" type="text" class="form-control" id="Address" value="A108 Adam Street, New York, NY 535022" required="required">
+                            <input name="txtjob" type="text" class="form-control" id="Job" value="<?= $user_info->job?>" required="required">
                         </div>
                     </div>
 
                     <div class="row mb-3">
                         <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Phone</label>
                         <div class="col-md-8 col-lg-9">
-                            <input name="phone" type="text" class="form-control" id="Phone" value="(436) 486-3538 x29071" required="required">
+                            <input name="txtphone" type="text" class="form-control" id="Phone" value="<?= $user_info->phone?>" required="required">
+                            <br>
+                            <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="txtcheck" value="true" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">Available for job</label>
                         </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <label for="Email" class="col-md-4 col-lg-3 col-form-label">Email</label>
-                        <div class="col-md-8 col-lg-9">
-                            <input name="email" type="email" class="form-control" id="Email" value="k.anderson@example.com" required="required">
                         </div>
                     </div>
 
                     <div class="text-center">
-                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                        <button type="submit" name="update" class="btn btn-primary">Save Changes</button>
                     </div>
                 </form><!-- End Profile Edit Form -->
 
