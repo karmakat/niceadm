@@ -27,7 +27,7 @@
               <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
                 <img src="<?= get_avatar_url($user_info->mail) ?>" alt="Profile" class="rounded-circle">
                 <h2><?= SHARP . e($user_info->user) ?></h2>
-                <h3>Web Designer</h3>
+                <h3><?= e($user_info->job)?></h3>
                 <h6><a href="mailto:<?= e($user_info->mail)?>" class="text-dark"><?= e($user_info->mail)?></a></h6>
                 <div class="social-links mt-2">
                   <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>

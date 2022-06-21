@@ -30,39 +30,23 @@
 
                 <div class="row">
                     <div class="col-lg-3 col-md-4 label ">Full Name</div>
-                    <div class="col-lg-9 col-md-8">Kevin Anderson</div>
+                    <div class="col-lg-9 col-md-8"><?= e($user_info->names)?></div>
                 </div>
 
                 <div class="row">
                     <div class="col-lg-3 col-md-4 label">Company</div>
-                    <div class="col-lg-9 col-md-8">Lueilwitz, Wisoky and Leuschke</div>
+                    <div class="col-lg-9 col-md-8"><?= e($user_info->company)?></div>
                 </div>
 
                 <div class="row">
                     <div class="col-lg-3 col-md-4 label">Job</div>
-                    <div class="col-lg-9 col-md-8">Web Designer</div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Country</div>
-                    <div class="col-lg-9 col-md-8">USA</div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Address</div>
-                    <div class="col-lg-9 col-md-8">A108 Adam Street, New York, NY 535022</div>
+                    <div class="col-lg-9 col-md-8"><?= e($user_info->job)?></div>
                 </div>
 
                 <div class="row">
                     <div class="col-lg-3 col-md-4 label">Phone</div>
-                    <div class="col-lg-9 col-md-8">(436) 486-3538 x29071</div>
+                    <div class="col-lg-9 col-md-8">(243) <?= e($user_info->phone)?></div>
                 </div>
-
-                <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Email</div>
-                    <div class="col-lg-9 col-md-8">k.anderson@example.com</div>
-                </div>
-
             </div>
 
             <div class="tab-pane fade show active profile-edit pt-3" id="profile-edit">
@@ -84,14 +68,14 @@
                     <div class="row mb-3">
                         <label for="about" class="col-md-4 col-lg-3 col-form-label">About</label>
                         <div class="col-md-8 col-lg-9">
-                            <textarea name="txtabout" class="form-control" id="about" style="height: 100px"  required="required"><?= $user_info->bio?></textarea>
+                            <textarea name="txtabout" class="form-control" id="about" style="height: 100px"  required="required"><?= e($user_info->bio)?></textarea>
                         </div>
                     </div>
 
                     <div class="row mb-3">
                         <label for="company" class="col-md-4 col-lg-3 col-form-label">Names</label>
                         <div class="col-md-8 col-lg-9">
-                            <input name="txtnames" type="text" class="form-control" id="company" value="<?= $user_info->names?>" required="required">
+                            <input name="txtnames" type="text" class="form-control" id="company" value="<?= e($user_info->names)?>" required="required">
                         </div>
                     </div>
 
@@ -99,28 +83,28 @@
                     <div class="row mb-3">
                         <label for="company" class="col-md-4 col-lg-3 col-form-label">Username</label>
                         <div class="col-md-8 col-lg-9">
-                            <input name="txtuser" type="text" class="form-control" id="company" value="<?= $user_info->user ?>" required="required">
+                            <input name="txtuser" type="text" class="form-control" id="company" value="<?= e($user_info->user) ?>" required="required">
                         </div>
                     </div>
 
                     <div class="row mb-3">
                         <label for="company" class="col-md-4 col-lg-3 col-form-label">Company</label>
                         <div class="col-md-8 col-lg-9">
-                            <input name="txtcompany" type="text" class="form-control" id="company" value="<?= $user_info->company?>" required="required">
+                            <input name="txtcompany" type="text" class="form-control" id="company" value="<?= e($user_info->company)?>" required="required">
                         </div>
                     </div>
 
                     <div class="row mb-3">
                         <label for="Job" class="col-md-4 col-lg-3 col-form-label">Job</label>
                         <div class="col-md-8 col-lg-9">
-                            <input name="txtjob" type="text" class="form-control" id="Job" value="<?= $user_info->job?>" required="required">
+                            <input name="txtjob" type="text" class="form-control" id="Job" value="<?= e($user_info->job)?>" required="required">
                         </div>
                     </div>
 
                     <div class="row mb-3">
                         <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Phone</label>
                         <div class="col-md-8 col-lg-9">
-                            <input name="txtphone" type="text" class="form-control" id="Phone" value="<?= $user_info->phone?>" required="required">
+                            <input name="txtphone" type="text" class="form-control" id="Phone" value="<?= e($user_info->phone)?>" required="required">
                             <br>
                             <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="txtcheck" value="true" id="rememberMe">
