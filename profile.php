@@ -58,9 +58,6 @@ if (
 		if (mb_strlen($phone) > 50) {
 			$errors[] = "Too long phone numbre(max 50)";
 		} 
-		if (is_already_in_use('phone', $phone, 't_users')) {
-			$errors[] = "Phone number already in use";
-		}
 		if (count($errors) == 0) {
 
 			$q = $db->prepare("UPDATE t_users SET names = :names, job = :job, company = :company,
@@ -75,6 +72,7 @@ if (
                 'id' => get_session('id')
 			]);
 			set_flash("Your profile was been updated");
+            redirect('profile.php');
 		}
 		else{
 			save_input_data();

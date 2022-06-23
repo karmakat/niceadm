@@ -50,10 +50,10 @@
             </div>
 
             <div class="tab-pane fade show active profile-edit pt-3" id="profile-edit">
-
+            <?php include('partials/_errors.php')?>
+              <?php include('partials/_flash.php')?>
                 <!-- Profile Edit Form -->
                 <form method="POST" autocomplete="off">
-                    <?php include('partials/_errors.php')?>
                     <div class="row mb-3">
                         <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
                         <div class="col-md-8 col-lg-9">

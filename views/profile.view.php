@@ -27,8 +27,8 @@
               <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
                 <img src="<?= get_avatar_url($user_info->mail) ?>" alt="Profile" class="rounded-circle">
                 <h2><?= SHARP . e($user_info->user) ?></h2>
-                <h3><?= e($user_info->job)?></h3>
-                <h6><a href="mailto:<?= e($user_info->mail)?>" class="text-dark"><?= e($user_info->mail)?></a></h6>
+                <h3><?= e($user_info->job) ?></h3>
+                <h6><a href="mailto:<?= e($user_info->mail) ?>" class="text-dark"><?= e($user_info->mail) ?></a></h6>
                 <div class="social-links mt-2">
                   <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
                   <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
@@ -72,6 +72,12 @@
                     <i class="bi bi-share-fill f-20 mr-5"> 3</i>
                   </a>
                 </div>
+                <div class="cmt-bar">
+                <form class="search-form d-flex align-items-center" method="POST" action="#">
+                  <input type="text" name="query" class="form-control" placeholder="Comment" title="Enter comment text">
+                  <button type="" title="Comment" class="btn btn-primary"><i class="bi bi-chat-left-dots"></i></button>
+                </form>
+              </div><!-- End Search Bar -->
               </div>
             </div>
           </div>
@@ -82,8 +88,8 @@
           <div class="pagetitle">
             <h1>About</h1>
           </div>
-        
-          <?php include('includes/profiles_infos.php')?>
+
+          <?php include('includes/profiles_infos.php') ?>
         </div>
       </div>
       </div>

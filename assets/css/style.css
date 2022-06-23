@@ -1296,3 +1296,11 @@ textarea.parsley-error {
   color: grey;
 
 }
+
+.card-footer .cmt-bar {
+  min-width: 300px;
+  margin-top: 20px;
+}
+.card-footer .cmt-bar .btn-primary{
+  margin-left: -40px;
+}
